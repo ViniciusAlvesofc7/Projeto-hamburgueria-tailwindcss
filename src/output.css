@@ -9,6 +9,7 @@
       "Courier New", monospace;
     --color-red-50: oklch(97.1% 0.013 17.38);
     --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-red-600: oklch(57.7% 0.245 27.325);
     --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-green-50: oklch(98.2% 0.018 155.826);
     --color-green-500: oklch(72.3% 0.219 149.579);
@@ -201,9 +202,6 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
-  .z-4 {
-    z-index: 4;
-  }
   .z-40 {
     z-index: 40;
   }
@@ -219,6 +217,9 @@
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
@@ -231,11 +232,11 @@
   .mt-9 {
     margin-top: calc(var(--spacing) * 9);
   }
-  .mb-0 {
-    margin-bottom: calc(var(--spacing) * 0);
-  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
   }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
@@ -276,17 +277,11 @@
   .w-full {
     width: 100%;
   }
-  .max-w-7 {
-    max-width: calc(var(--spacing) * 7);
-  }
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
   .min-w-\[90\%\] {
     min-width: 90%;
-  }
-  .min-w-\[90\] {
-    min-width: 90;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -312,20 +307,11 @@
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
-  }
-  .gap-5 {
-    gap: calc(var(--spacing) * 5);
-  }
   .gap-7 {
     gap: calc(var(--spacing) * 7);
   }
   .rounded {
     border-radius: 0.25rem;
-  }
-  .rounded-2xl {
-    border-radius: var(--radius-2xl);
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -340,25 +326,15 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-1 {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .border-2 {
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
-  .bg-amber-50 {
-    background-color: var(--color-amber-50);
+  .border-red-500 {
+    border-color: var(--color-red-500);
   }
   .bg-black {
     background-color: var(--color-black);
-  }
-  .bg-black\/50 {
-    background-color: color-mix(in srgb, #000 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
-    }
   }
   .bg-black\/60 {
     background-color: color-mix(in srgb, #000 60%, transparent);
@@ -366,14 +342,8 @@
       background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
     }
   }
-  .bg-gray-50 {
-    background-color: var(--color-gray-50);
-  }
   .bg-gray-900 {
     background-color: var(--color-gray-900);
-  }
-  .bg-green-50 {
-    background-color: var(--color-green-50);
   }
   .bg-green-500 {
     background-color: var(--color-green-500);
@@ -381,11 +351,11 @@
   .bg-green-600 {
     background-color: var(--color-green-600);
   }
-  .bg-red-50 {
-    background-color: var(--color-red-50);
-  }
   .bg-red-500 {
     background-color: var(--color-red-500);
+  }
+  .bg-red-600 {
+    background-color: var(--color-red-600);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -398,9 +368,6 @@
   }
   .bg-center {
     background-position: center;
-  }
-  .bg-left {
-    background-position: left;
   }
   .p-1 {
     padding: calc(var(--spacing) * 1);
@@ -419,9 +386,6 @@
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
-  }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
@@ -456,9 +420,6 @@
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
-  }
-  .text-red-50 {
-    color: var(--color-red-50);
   }
   .text-red-500 {
     color: var(--color-red-500);
@@ -495,13 +456,6 @@
       }
     }
   }
-  .hover\:rotate-0 {
-    &:hover {
-      @media (hover: hover) {
-        rotate: 0deg;
-      }
-    }
-  }
   .hover\:rotate-2 {
     &:hover {
       @media (hover: hover) {
@@ -509,59 +463,10 @@
       }
     }
   }
-  .hover\:rotate-3 {
-    &:hover {
-      @media (hover: hover) {
-        rotate: 3deg;
-      }
-    }
-  }
   .hover\:bg-green-600 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-green-600);
-      }
-    }
-  }
-  .hover\:bg-green-700 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-green-700);
-      }
-    }
-  }
-  .hover\:opacity-5 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 5%;
-      }
-    }
-  }
-  .hover\:opacity-9 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 9%;
-      }
-    }
-  }
-  .hover\:opacity-90 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 90%;
-      }
-    }
-  }
-  .hover\:opacity-95 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 95%;
-      }
-    }
-  }
-  .hover\:opacity-98 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 98%;
       }
     }
   }
@@ -575,11 +480,6 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-  .md\:gap-0 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 0);
-    }
-  }
   .md\:gap-10 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 10);
@@ -589,16 +489,6 @@
     @media (width >= 48rem) {
       font-size: var(--text-3xl);
       line-height: var(--tw-leading, var(--text-3xl--line-height));
-    }
-  }
-  .lg\:grid-cols-1 {
-    @media (width >= 64rem) {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-  }
-  .lg\:grid-cols-3 {
-    @media (width >= 64rem) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 }
